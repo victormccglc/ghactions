@@ -4,17 +4,14 @@ on:
     branches:
       - patch/**
 jobs:
-  increase-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Install Dependencies
         run: npm install
-      - name: Patch version
-        run: npm version patch
-      - name: Push new verison
-        run: git add . && git commit -m "new v" && git push
+      - run: git push
       env:
         # The secret is passed automatically. Nothing to configure.
         github-token: ${{ secrets.GITHUB_TOKEN }}
