@@ -14,7 +14,7 @@ jobs:
       - name: Patch version
         run: npm version patch
       - name: Push new verison
-        run: git push
+        run: git add . && git commit -m "new v" && git push
       env:
         # The secret is passed automatically. Nothing to configure.
         github-token: ${{ secrets.GITHUB_TOKEN }}
