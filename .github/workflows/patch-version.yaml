@@ -8,7 +8,6 @@ jobs:
     name: Increase the version steps
     runs-on: ubuntu-latest
     steps:
-      - name: Unit tests
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Install Dependencies
