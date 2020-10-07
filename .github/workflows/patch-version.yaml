@@ -8,10 +8,13 @@ jobs:
     name: Increase the version steps
     runs-on: ubuntu-latest
     steps:
+      - name: Unit tests
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Install Dependencies
         run: npm install
+      - name: Test Security Rules
+        run: npm run test
       - name: Set git email
         run :  git config user.email "victormccglc@mccglc.com"
       - name: Set git user
