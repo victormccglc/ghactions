@@ -1,8 +1,8 @@
-name: Increase App Version - patch
+name: Increase App Version - minor
 on:
   push:
     branches:
-      - patch/**
+      - minor/**
 jobs:
   build:
     name: Increase the version steps
