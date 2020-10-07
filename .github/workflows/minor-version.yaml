@@ -19,6 +19,6 @@ jobs:
       - name: Set git user
         run: git config user.name "The Versioner"
       - name: Increase version
-        run: npm version patch
+        run: npm version minor
       - name: Push the new version to github 
         run: git push
