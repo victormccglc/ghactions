@@ -1,0 +1,19 @@
+name: Increase App Version - minor
+on:
+  push:
+    branches:
+      - patch/**
+jobs:
+  build:
+    name: Increase the version steps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN_ACTION }}
+      - uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: npm install
+      - name: Increase version
+        run: npm version patch
+        run: git push
