@@ -16,4 +16,5 @@ jobs:
         run: npm install
       - name: Increase version
         run: npm version patch
+      - name: Push the new version to github 
         run: git push
