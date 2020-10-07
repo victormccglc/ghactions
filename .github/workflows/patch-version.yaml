@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-node@v1
       - name: Install Dependencies
         run: npm install
+      - name: Set git email
+        run :  git config user.email "victormccglc@mccglc.com"
+      - name: Set git user
+        run: git config user.name "The Versioner"
       - name: Increase version
         run: npm version patch
       - name: Push the new version to github 
